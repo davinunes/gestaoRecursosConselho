@@ -6,9 +6,10 @@ vscode:
     - redhat.java
     - gabrielbb.vscode-lombok
     - vmware.vscode-spring-boot
-    - vscjava.vscode-lombok
     - Pleiades.java-extension-pack-jdk
     - eamodio.gitlens
+    - mtxr.sqltools
+    - mtxr.sqltools-driver-mysql
     # Adicione outras extensões necessárias aqui
 
 ports:
@@ -23,3 +24,11 @@ tasks:
   - name: Start Spring Boot API
     init: mvn clean install
     command: mvn spring-boot:run
+
+services:
+  - name: mariadb
+    image: mariadb
+    ports:
+      - 3306
+    environment:
+      MYSQL_ROOT_PASSWORD: fabiano&clair
