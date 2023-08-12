@@ -31,4 +31,4 @@ services:
     ports:
       - 3306
     environment:
-      MYSQL_ROOT_PASSWORD: fabiano&clair
+      MYSQL_ROOT_PASSWORD: "fabiano&clair"
