@@ -13,3 +13,8 @@ tasks:
       sudo apt-get update
       sudo apt-get install -y default-jdk maven
     command: echo "Java and Maven installed."
+  - name: Start Spring Boot API
+    init: mvn clean install
+    command: mvn spring-boot:run
+    ports:
+      - 8080
