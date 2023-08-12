@@ -3,10 +3,10 @@ image:
 
 vscode:
   extensions:
-    - "vscjava.vscode-java-pack"
-    - "redhat.java"
-    - "gabrielbb.vscode-lombok"
-    - "vmware.vscode-spring-boot"
+    - vscjava.vscode-java-pack
+    - redhat.java
+    - gabrielbb.vscode-lombok
+    - vmware.vscode-spring-boot
     # Adicione outras extensões necessárias aqui
 
 ports:
