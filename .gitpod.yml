@@ -6,6 +6,9 @@ vscode:
     - redhat.java
     - gabrielbb.vscode-lombok
     - vmware.vscode-spring-boot
+    - vscjava.vscode-lombok
+    - Pleiades.java-extension-pack-jdk
+    - eamodio.gitlens
     # Adicione outras extensões necessárias aqui
 
 ports:
