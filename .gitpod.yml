@@ -1,0 +1,27 @@
+image:
+  file: .gitpod.Dockerfile
+
+vscode:
+  extensions:
+    - "vscjava.vscode-java-pack"
+    - "redhat.java"
+    - "gabrielbb.vscode-lombok"
+    - "vmware.vscode-spring-boot"
+    # Adicione outras extensões necessárias aqui
+
+ports:
+  - 8080
+
+tasks:
+  - name: Install Java and Maven
+    init: |
+      sudo apt-get update
+      sudo apt-get install -y default-jdk maven
+
+  - name: Start Spring Boot API
+    command: mvn spring-boot:run
+    ports:
+      - 8080
+
+# Post-Start Script
+# You can add any additional setup steps here after the environment starts.
