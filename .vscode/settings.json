@@ -9,9 +9,9 @@
             "port": 3306,
             "driver": "MariaDB",
             "name": "conselho",
-            "database": "resursos",
+            "database": "recursos",
             "username": "root",
-            "password": "fabiano&clair"
+            "password": "senha-do-banco-de-dados"
         }
     ]
 }
