@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-ApiConselhoApplication<api-conselho>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "br.eti.davinunes.apiconselho.ApiConselhoApplication",
+            "projectName": "api-conselho",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
