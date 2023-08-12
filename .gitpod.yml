@@ -1,4 +1,4 @@
-image: gitpod/workspace-mysql
+image: gitpod/workspace-full
 
 vscode:
   extensions:
@@ -9,11 +9,14 @@ vscode:
     # Adicione outras extensões necessárias aqui
 
 ports:
-  - 8080
+    - port: 3000
+    onOpen: open-preview
+    name: Website
+    description: Website Preview
+    visibility: private
+    protocol: https
 
 tasks:
   - name: Start Spring Boot API
     init: mvn clean install
     command: mvn spring-boot:run
-    ports:
-      - 8080
