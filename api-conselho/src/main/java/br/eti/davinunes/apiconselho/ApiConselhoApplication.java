@@ -18,7 +18,7 @@ public class ApiConselhoApplication {
 @RestController
 class HelloController {
 
-	@GetMapping("/hello")
+	@GetMapping("/")
 	public String hello() {
 	    return "Hello, World!";
 	}
