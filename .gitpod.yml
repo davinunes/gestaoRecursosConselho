@@ -1,6 +1,5 @@
 ---
-image:
-  file: .gitpod.Dockerfile
+image: ubuntu
 vscode:
   extensions:
     - vscjava.vscode-java-pack
