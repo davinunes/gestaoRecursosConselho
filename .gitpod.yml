@@ -12,14 +12,6 @@ vscode:
     - mtxr.sqltools-driver-mysql
     # Adicione outras extensões necessárias aqui
 
-ports:
-    - port: 3000
-      onOpen: open-preview
-      name: Website
-      description: Website Preview
-      visibility: privatedocker start mariadb-container
-      protocol: https
-
 tasks:
   - name: Start Spring Boot API
     init: pwd
