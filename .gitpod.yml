@@ -15,4 +15,4 @@ vscode:
 tasks:
   - name: Start Spring Boot API
     init: pwd
-    command: docker run --name mariadb-container -e MYSQL_ROOT_PASSWORD=senha-do-banco-de-dados -p 3306:3306 -v /workspace/gestaoRecursosConselho/dB:/var/lib/mysql -d mariadb
+    command: command: docker run --name mariadb-container -e MYSQL_ROOT_PASSWORD=senha-do-banco-de-dados -p 3306:3306 -v /workspace/gestaoRecursosConselho/dB -d mariadb || docker start mariadb-container
