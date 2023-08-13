@@ -13,5 +13,6 @@
             "username": "root",
             "password": "senha-do-banco-de-dados"
         }
-    ]
+    ],
+    "java.compile.nullAnalysis.mode": "automatic"
 }
