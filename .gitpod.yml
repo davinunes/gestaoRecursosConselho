@@ -22,5 +22,5 @@ ports:
 
 tasks:
   - name: Start Spring Boot API
-    init: mvn clean install
-    command: mvn spring-boot:run
+    init: pwd
+    command: docker run --name mariadb-container -e MYSQL_ROOT_PASSWORD=senha-do-banco-de-dados -p 3306:3306 -v /workspace/gestaoRecursosConselho/dB -d mariadb
