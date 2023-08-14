@@ -8,8 +8,12 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
+@Getter
+@Setter
 @Table(name = "recurso")
 public class Recurso {
 
@@ -21,6 +25,7 @@ public class Recurso {
     private String bloco;
     private int unidade;
     private String tipo;
+    private String descricao;
 
     @ManyToOne
     @JoinColumn(name = "status_id")
