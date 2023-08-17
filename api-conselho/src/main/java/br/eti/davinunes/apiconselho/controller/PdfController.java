@@ -1,6 +1,7 @@
 package br.eti.davinunes.apiconselho.controller;
 
 import java.io.ByteArrayOutputStream;
+import java.util.Base64;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -28,5 +29,9 @@ public class PdfController {
             // Handle exceptions and return an appropriate response
             return new byte[0];
         }
+    }
+
+    private String convertToBase64(byte[] bytes) {
+        return Base64.getEncoder().encodeToString(bytes);
     }
 }
