@@ -19,9 +19,9 @@ public class PdfController {
 
     @PostMapping(value = "/generate-pdf", produces = MediaType.APPLICATION_OCTET_STREAM_VALUE)
     @ResponseBody
-        public ResponseEntity<?> generatePdf(
-            @RequestParam String tipo,
-            @RequestBody String htmlContent) {
+    public ResponseEntity<?> generatePdf(
+        @RequestParam String tipo,
+        @RequestBody String htmlContent) {
 
         try {
             ITextRenderer renderer = new ITextRenderer();
@@ -38,7 +38,10 @@ public class PdfController {
                 return ResponseEntity.ok(pdfBase64);
             } else if ("file".equals(tipo)) {
                 HttpHeaders headers = new HttpHeaders();
+                headers.setContentType(MediaType.APPLICATION_PDF);
                 headers.add(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=converted.pdf");
+                headers.setContentLength(pdfBytes.length);
+                
                 return new ResponseEntity<>(pdfBytes, headers, HttpStatus.OK);
             } else {
                 return ResponseEntity.badRequest().body("Tipo inválido");
