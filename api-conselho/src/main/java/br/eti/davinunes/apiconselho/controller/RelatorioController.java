@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import br.eti.davinunes.apiconselho.entity.DetalhesTabela;
 import br.eti.davinunes.apiconselho.entity.RelatorioData;
 
 @RestController
@@ -20,11 +21,14 @@ public class RelatorioController {
         try {
             // Acesso aos parâmetros recebidos via POST
             String parametro1 = data.getParametro1();
-            List<String> listaDeParametros = data.getListaDeParametros();
+            List<DetalhesTabela> listaDeParametros = data.getListaDeParametros();
 
             // Validando se os dados foram lidos corretamente
             System.out.println("parametro1: " + parametro1);
-            System.out.println("listaDeParametros: " + listaDeParametros);
+            
+            for (DetalhesTabela detalhes : listaDeParametros) {
+                System.out.println("DetalhesTabela: coluna1=" + detalhes.getColuna1() + ", coluna2=" + detalhes.getColuna2() + ", coluna3=" + detalhes.getColuna3() + ", coluna4=" + detalhes.getColuna4());
+            }
 
             // Retornando uma resposta de sucesso
             return ResponseEntity.ok("Dados lidos com sucesso: " + parametro1 + ", " + listaDeParametros);

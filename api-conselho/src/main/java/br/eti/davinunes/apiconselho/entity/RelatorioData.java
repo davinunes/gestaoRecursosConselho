@@ -10,7 +10,7 @@ import lombok.Setter;
 
 public class RelatorioData {
     private String parametro1;
-    private List<String> listaDeParametros;
+    private List<DetalhesTabela> listaDeParametros;
 
     // getters e setters
 }
