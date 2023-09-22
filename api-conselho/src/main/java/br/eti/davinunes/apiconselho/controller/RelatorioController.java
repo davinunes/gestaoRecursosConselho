@@ -54,7 +54,15 @@ public class RelatorioController {
 
 
             // Converta a lista de DetalhesTabela em um JRDataSource (dependendo da sua lógica)
-            JRDataSource dataSource = createDataSource(data.getListaDeParametros());
+
+            // Crie uma lista de DetalhesTabela a partir dos dados
+            List<DetalhesTabela> detalhesTabelaList = data.getListaDeParametros();
+            System.out.println("###########################################################################################");
+            System.out.println(detalhesTabelaList);
+            System.out.println("###########################################################################################");
+            // Converta a lista de DetalhesTabela em um JRDataSource
+            // JRDataSource dataSource = new MeuJRDataSource(data.getListaDeParametros());
+            JRDataSource dataSource =  new JRBeanCollectionDataSource(detalhesTabelaList);
 
             JasperPrint jasperPrint = JasperFillManager.fillReport(jasperStream, parameters, dataSource);
 
