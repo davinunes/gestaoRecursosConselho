@@ -13,5 +13,15 @@ public class RelatorioData {
     private List<DetalhesTabela> listaDeParametros;
 
     // getters e setters
+
+    public String getParametro1() {
+        return parametro1;
+    }
+    
+    public void setParametro1(String parametro1) {
+        this.parametro1 = parametro1;
+    }
+
+
 }
 

@@ -33,11 +33,25 @@ public class RelatorioController {
     public ResponseEntity<byte[]> gerarRelatorio(@RequestBody RelatorioData data) {
 
         try {
-            InputStream jasperStream = getClass().getResourceAsStream("/br/eti/davinunes/apiconselho/relatorios/Coffee.jasper");
+            InputStream jasperStream = getClass().getResourceAsStream("/br/eti/davinunes/apiconselho/relatorios/Base.jasper");
+
+            if (jasperStream == null) {
+                // O arquivo Jasper não foi encontrado
+                System.out.println("###########################################################################################");
+                System.out.println("###########################################################################################");
+                System.out.println("###########################################################################################");
+                System.out.println("###########################################################################################");
+                return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new byte[0]);
+            }
 
             // Crie um mapa para os parâmetros do relatório
             Map<String, Object> parameters = new HashMap<>();
             parameters.put("parametro1", data.getParametro1());
+
+            System.out.println("###########################################################################################");
+            System.out.println(data.getListaDeParametros());
+            System.out.println("###########################################################################################");
+
 
             // Converta a lista de DetalhesTabela em um JRDataSource (dependendo da sua lógica)
             JRDataSource dataSource = createDataSource(data.getListaDeParametros());
