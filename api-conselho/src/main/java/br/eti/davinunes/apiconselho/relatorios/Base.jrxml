@@ -1,11 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.20.0.final using JasperReports Library version 6.19.0  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Base" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="e28ec507-eee4-4406-b1af-8f3d426c1776">
+	<subDataset name="listaDeParametros" uuid="c0de9fd5-0f72-471a-b369-7d29c578a612">
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+	</subDataset>
 	<parameter name="parametro1" class="java.lang.String"/>
 	<parameter name="listaDeParametros" class="java.util.Collection"/>
 	<queryString>
 		<![CDATA[]]>
 	</queryString>
+	<field name="coluna1" class="java.lang.String"/>
+	<field name="coluna2" class="java.lang.String"/>
+	<field name="coluna3" class="java.lang.String"/>
+	<field name="coluna4" class="java.lang.String"/>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
@@ -26,17 +35,23 @@
 				<reportElement x="295" y="17" width="100" height="30" uuid="1194a928-d3de-4948-9abf-3743afc5322c"/>
 				<textFieldExpression><![CDATA[$P{parametro1}]]></textFieldExpression>
 			</textField>
-			<textField>
-				<reportElement x="210" y="26" width="100" height="30" uuid="1c91c99a-9a42-432d-9fed-146c95e945a3"/>
-				<textFieldExpression><![CDATA[$P{listaDeParametros}]]></textFieldExpression>
-			</textField>
 		</band>
 	</pageHeader>
 	<columnHeader>
 		<band height="61" splitType="Stretch"/>
 	</columnHeader>
 	<detail>
-		<band height="125" splitType="Stretch"/>
+		<band height="125" splitType="Stretch">
+			<componentElement>
+				<reportElement x="180" y="20" width="100" height="30" uuid="9f0ee6cb-c05e-4993-9533-c57457d0bebb"/>
+				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Vertical">
+					<datasetRun subDataset="listaDeParametros" uuid="895bcb86-97d8-405b-90f0-dfebbf30be45">
+						<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($P{listaDeParametros})]]></dataSourceExpression>
+					</datasetRun>
+					<jr:listContents height="30" width="100"/>
+				</jr:list>
+			</componentElement>
+		</band>
 	</detail>
 	<columnFooter>
 		<band height="45" splitType="Stretch"/>
