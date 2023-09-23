@@ -17,7 +17,6 @@ import org.springframework.web.bind.annotation.RestController;
 import br.eti.davinunes.apiconselho.entity.DetalhesTabela;
 import br.eti.davinunes.apiconselho.entity.RelatorioData;
 import net.sf.jasperreports.engine.JRDataSource;
-import net.sf.jasperreports.engine.JREmptyDataSource;
 import net.sf.jasperreports.engine.JasperExportManager;
 import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
@@ -35,31 +34,18 @@ public class RelatorioController {
         try {
             InputStream jasperStream = getClass().getResourceAsStream("/br/eti/davinunes/apiconselho/relatorios/Base.jasper");
 
-            if (jasperStream == null) {
-                // O arquivo Jasper não foi encontrado
-                System.out.println("###########################################################################################");
-                System.out.println("###########################################################################################");
-                System.out.println("###########################################################################################");
-                System.out.println("###########################################################################################");
-                return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new byte[0]);
-            }
-
             // Crie um mapa para os parâmetros do relatório
             Map<String, Object> parameters = new HashMap<>();
-            parameters.put("parametro1", data.getParametro1());
-
-            System.out.println("###########################################################################################");
-            System.out.println(data.getListaDeParametros());
-            System.out.println("###########################################################################################");
-
+            parameters.put("codomOmBase", data.getCodomOmBase());
+            parameters.put("nomeOmBase", data.getNomeOmBase());
+            parameters.put("siglaOmBase", data.getSiglaOmBase());
+            parameters.put("certificadosOmBase", data.getCertificadosOmBase());
 
             // Converta a lista de DetalhesTabela em um JRDataSource (dependendo da sua lógica)
 
             // Crie uma lista de DetalhesTabela a partir dos dados
             List<DetalhesTabela> detalhesTabelaList = data.getListaDeParametros();
-            System.out.println("###########################################################################################");
-            System.out.println(detalhesTabelaList);
-            System.out.println("###########################################################################################");
+
             // Converta a lista de DetalhesTabela em um JRDataSource
             // JRDataSource dataSource = new MeuJRDataSource(data.getListaDeParametros());
             JRDataSource dataSource =  new JRBeanCollectionDataSource(detalhesTabelaList);
@@ -81,19 +67,5 @@ public class RelatorioController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(new byte[0]);
         }
 
-
-        
-    }
-
-    // Método para criar o JRDataSource a partir da lista de DetalhesTabela
-    private JRDataSource createDataSource(List<DetalhesTabela> detalhesTabelaList) {
-        // Verifique se a lista não é nula ou vazia
-        if (detalhesTabelaList != null && !detalhesTabelaList.isEmpty()) {
-            // Use JRBeanCollectionDataSource para mapear a lista para um JRDataSource
-            return new JRBeanCollectionDataSource(detalhesTabelaList);
-        } else {
-            // Se a lista estiver vazia, use um JRDataSource vazio
-            return new JREmptyDataSource();
-        }
     }
 }

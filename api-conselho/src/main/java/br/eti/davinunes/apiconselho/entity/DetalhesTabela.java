@@ -7,15 +7,16 @@ import lombok.Setter;
 @Setter
 
 public class DetalhesTabela {
-    private String coluna1;
-    private String coluna2;
-    private String coluna3;
-    private String coluna4;
+    private String codom;
+    private String nome;
+    private String sigla;
+    private String certificados;
+    private String temSubordinados;
 
     // getters e setters para cada coluna
     // ...
-    @Override
-    public String toString() {
-        return "DetalhesTabela [coluna1=" + coluna1 + ", coluna2=" + coluna2 + ", coluna3=" + coluna3 + ", coluna4=" + coluna4 + "]";
-    }
+    // @Override
+    // public String toString() {
+    //     return "DetalhesTabela [Codom=" + coluna1 + ", coluna2=" + coluna2 + ", coluna3=" + coluna3 + ", coluna4=" + coluna4 + "]";
+    // }
 }

@@ -9,19 +9,13 @@ import lombok.Setter;
 @Setter
 
 public class RelatorioData {
-    private String parametro1;
+    private String codomOmBase;
+    private String nomeOmBase;
+    private String siglaOmBase;
+    private String certificadosOmBase;
     private List<DetalhesTabela> listaDeParametros;
+    
 
     // getters e setters
-
-    public String getParametro1() {
-        return parametro1;
-    }
-    
-    public void setParametro1(String parametro1) {
-        this.parametro1 = parametro1;
-    }
-
-
 }
 

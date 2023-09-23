@@ -6,15 +6,18 @@
 			<![CDATA[]]>
 		</queryString>
 	</subDataset>
-	<parameter name="parametro1" class="java.lang.String"/>
-	<parameter name="listaDeParametros" class="java.util.Collection"/>
+	<parameter name="codomOmBase" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="nomeOmBase" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="siglaOmBase" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="certificadosOmBase" class="java.lang.String" isForPrompting="false"/>
 	<queryString>
 		<![CDATA[]]>
 	</queryString>
-	<field name="coluna1" class="java.lang.String"/>
-	<field name="coluna2" class="java.lang.String"/>
-	<field name="coluna3" class="java.lang.String"/>
-	<field name="coluna4" class="java.lang.String"/>
+	<field name="codom" class="java.lang.String"/>
+	<field name="nome" class="java.lang.String"/>
+	<field name="sigla" class="java.lang.String"/>
+	<field name="certificados" class="java.lang.String"/>
+	<field name="temSubordinados" class="java.lang.String"/>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
@@ -30,67 +33,174 @@
 		</band>
 	</title>
 	<pageHeader>
-		<band height="30" splitType="Stretch">
+		<band height="40" splitType="Stretch">
 			<textField>
-				<reportElement x="0" y="0" width="555" height="30" uuid="1194a928-d3de-4948-9abf-3743afc5322c"/>
-				<textElement textAlignment="Center"/>
-				<textFieldExpression><![CDATA[$P{parametro1}]]></textFieldExpression>
+				<reportElement x="0" y="0" width="111" height="30" uuid="bd4bb875-8647-4246-bfc7-774650b26924"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textFieldExpression><![CDATA[$P{codomOmBase}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="111" y="0" width="222" height="30" uuid="c52f1a37-45c0-493f-81d9-b56bfee83a6f"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textFieldExpression><![CDATA[$P{nomeOmBase}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="333" y="0" width="111" height="30" uuid="4df564eb-0077-4196-be78-86a44341a3a1"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textFieldExpression><![CDATA[$P{siglaOmBase}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="444" y="0" width="111" height="30" uuid="ec306995-ac1e-496c-87ec-6c17ea77e98c"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textFieldExpression><![CDATA[$P{certificadosOmBase}]]></textFieldExpression>
 			</textField>
 		</band>
 	</pageHeader>
 	<columnHeader>
 		<band height="22" splitType="Stretch">
 			<staticText>
-				<reportElement x="0" y="0" width="141" height="19" uuid="eb9c2a77-9200-4b79-9951-232db3a0fc0d">
-					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="fa06d2ef-abd9-4970-91e2-5e3c3fbc3fc7"/>
+				<reportElement x="0" y="0" width="111" height="22" uuid="7500b32e-78b3-4e40-8190-21107d595510">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="18773960-cf0a-42ae-83ad-d2f039495133"/>
 				</reportElement>
-				<text><![CDATA[FRUTA]]></text>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<text><![CDATA[CODOM]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="141" y="0" width="138" height="18" uuid="ac98834e-3d9d-4cb6-abc6-73b6a0f11d5e">
-					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e63e7f81-e673-403c-ae4b-b8dd4c56b887"/>
+				<reportElement x="111" y="0" width="111" height="22" uuid="0cdec13c-746b-4b33-8593-8775d231b8bd">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="06a47d8e-0770-4048-9b49-031198d80080"/>
 				</reportElement>
-				<text><![CDATA[BEBIDA]]></text>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<text><![CDATA[NOME]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="279" y="0" width="138" height="18" uuid="7f4a92b5-08eb-4027-8b4e-780ff3dc393d">
-					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="057bc27d-3a40-4281-81bd-29e950b75ff6"/>
+				<reportElement x="222" y="0" width="111" height="22" uuid="27d0cea2-67f2-471c-827f-47334f8ef534">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="3d776dab-972b-4618-bfbe-df22b0fbdaa8"/>
 				</reportElement>
-				<text><![CDATA[PESSOA]]></text>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<text><![CDATA[SIGLA]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="420" y="0" width="130" height="18" uuid="1a0c4f9e-b39d-4a09-9df4-8f47ca56d780">
-					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="b83f3104-9bd7-4a31-ab49-21803ac6bf79"/>
+				<reportElement x="333" y="0" width="111" height="22" uuid="826e560e-0afd-4d73-bb19-3278b2ecbfec">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="77997713-939a-4253-b240-c0bbca5a33dd"/>
 				</reportElement>
-				<text><![CDATA[NAÇÃO]]></text>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<text><![CDATA[CERTIFICADOS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="444" y="0" width="111" height="22" uuid="02ec5441-3a8d-4b37-a9e7-d997f33ff448">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="59daf257-34e3-46a4-b8d9-29b1ee77288a"/>
+				</reportElement>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<text><![CDATA[SUBORDINADOS]]></text>
 			</staticText>
 		</band>
 	</columnHeader>
 	<detail>
-		<band height="26" splitType="Stretch">
+		<band height="30" splitType="Stretch">
 			<textField>
-				<reportElement x="0" y="0" width="141" height="19" uuid="c7ce5fdb-1425-434f-80dc-4e176df9724a">
-					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="fa06d2ef-abd9-4970-91e2-5e3c3fbc3fc7"/>
+				<reportElement x="0" y="0" width="111" height="30" uuid="7002e4f4-4519-4ee6-a156-e15e26bd1eb0">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="18773960-cf0a-42ae-83ad-d2f039495133"/>
 				</reportElement>
-				<textFieldExpression><![CDATA[$F{coluna1}]]></textFieldExpression>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{codom}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="141" y="0" width="138" height="18" uuid="77e36c41-d8ca-4b4a-b9ad-026bc3fdd8ee">
-					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e63e7f81-e673-403c-ae4b-b8dd4c56b887"/>
+				<reportElement x="111" y="0" width="111" height="30" uuid="b9e4e748-2033-4c90-94e3-16dd78337363">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="06a47d8e-0770-4048-9b49-031198d80080"/>
 				</reportElement>
-				<textFieldExpression><![CDATA[$F{coluna2}]]></textFieldExpression>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{nome}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="279" y="0" width="138" height="18" uuid="8e43f54a-31c5-406c-b4bb-26d358fa758b">
-					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="057bc27d-3a40-4281-81bd-29e950b75ff6"/>
+				<reportElement x="222" y="0" width="111" height="30" uuid="89bf99c0-0425-4d6e-b620-f7e7887f0395">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="3d776dab-972b-4618-bfbe-df22b0fbdaa8"/>
 				</reportElement>
-				<textFieldExpression><![CDATA[$F{coluna3}]]></textFieldExpression>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{sigla}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="420" y="0" width="130" height="18" uuid="6b9b5152-d121-4639-851d-dbf4fb48dc35">
-					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="b83f3104-9bd7-4a31-ab49-21803ac6bf79"/>
+				<reportElement x="333" y="0" width="111" height="30" uuid="213e8882-b049-47c5-9186-3dbb5f52ebba">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="77997713-939a-4253-b240-c0bbca5a33dd"/>
 				</reportElement>
-				<textFieldExpression><![CDATA[$F{coluna4}]]></textFieldExpression>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{certificados}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="444" y="0" width="111" height="30" uuid="6cde417d-27f5-470f-9998-79e7d1dbea18">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="59daf257-34e3-46a4-b8d9-29b1ee77288a"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{temSubordinados}]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>
