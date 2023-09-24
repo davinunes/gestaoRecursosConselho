@@ -15,4 +15,4 @@ vscode:
 tasks:
   - name: Start Spring Boot API
     init: pwd
-    command: sdk install java 17.0.8.fx-zulu; sdk default java 17.0.8.fx-zulu; workspace/gestaoRecursosConselho/api-conselho/mvnw spring-boot:run
+    command: sdk install java 17.0.8.fx-zulu; sdk default java 17.0.8.fx-zulu; /workspace/gestaoRecursosConselho/api-conselho/mvnw spring-boot:run
