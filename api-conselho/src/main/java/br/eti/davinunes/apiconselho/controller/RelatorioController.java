@@ -31,6 +31,8 @@ public class RelatorioController {
     @PostMapping("/gerar")
     public ResponseEntity<byte[]> gerarRelatorio(@RequestBody RelatorioData data) {
 
+        System.out.println("Chamada Recebida!!");
+
         try {
             InputStream jasperStream = getClass().getResourceAsStream("/br/eti/davinunes/apiconselho/relatorios/Base.jasper");
 
@@ -53,6 +55,7 @@ public class RelatorioController {
             JasperPrint jasperPrint = JasperFillManager.fillReport(jasperStream, parameters, dataSource);
 
             byte[] relatorioPDF = JasperExportManager.exportReportToPdf(jasperPrint);
+            System.out.println(relatorioPDF);
 
             HttpHeaders headers = new HttpHeaders();
             headers.setContentType(MediaType.APPLICATION_PDF);
