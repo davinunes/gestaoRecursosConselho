@@ -1,2 +1,2 @@
 # gestaoRecursosConselho
-App para gerenciar os recursos do conselho fiscal
+App que retorna um Arquivo PDF com base em dados POST recebidos
