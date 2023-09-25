@@ -34,7 +34,7 @@ public class RelatorioController {
         System.out.println("Chamada Recebida!!");
 
         try {
-            InputStream jasperStream = getClass().getResourceAsStream("/br/eti/davinunes/apiconselho/relatorios/Base.jasper");
+            InputStream jasperStream = getClass().getResourceAsStream("/relatorios/Base.jasper");
 
             // Crie um mapa para os parâmetros do relatório
             Map<String, Object> parameters = new HashMap<>();
@@ -43,10 +43,14 @@ public class RelatorioController {
             parameters.put("siglaOmBase", data.getSiglaOmBase());
             parameters.put("certificadosOmBase", data.getCertificadosOmBase());
 
+            System.out.println(parameters);
+
             // Converta a lista de DetalhesTabela em um JRDataSource (dependendo da sua lógica)
 
             // Crie uma lista de DetalhesTabela a partir dos dados
             List<DetalhesTabela> detalhesTabelaList = data.getListaDeParametros();
+
+            System.out.println(detalhesTabelaList);
 
             // Converta a lista de DetalhesTabela em um JRDataSource
             // JRDataSource dataSource = new MeuJRDataSource(data.getListaDeParametros());
