@@ -9,10 +9,13 @@ import lombok.Setter;
 @Setter
 
 public class RelatorioData {
+    private String qualiProfName;
+    private String ano;
     private String codomOmBase;
     private String nomeOmBase;
     private String siglaOmBase;
     private String certificadosOmBase;
+    private String totalCertificados;
     private List<DetalhesTabela> listaDeParametros;
     
 

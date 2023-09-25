@@ -42,6 +42,9 @@ public class RelatorioController {
             parameters.put("nomeOmBase", data.getNomeOmBase());
             parameters.put("siglaOmBase", data.getSiglaOmBase());
             parameters.put("certificadosOmBase", data.getCertificadosOmBase());
+            parameters.put("ano", data.getAno());
+            parameters.put("qualiProfName", data.getQualiProfName());
+            parameters.put("totalCertificados", data.getTotalCertificados());
 
             System.out.println(parameters);
 
