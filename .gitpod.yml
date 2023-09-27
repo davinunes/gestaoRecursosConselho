@@ -1,4 +1,3 @@
-java --version
 image: gitpod/workspace-full
 
 vscode:
