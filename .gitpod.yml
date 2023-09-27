@@ -1,3 +1,4 @@
+java --version
 image: gitpod/workspace-full
 
 vscode:
@@ -15,4 +16,4 @@ vscode:
 tasks:
   - name: Start Spring Boot API
     init: pwd
-    command: cd /workspace/gestaoRecursosConselho/api-conselho; ./mvnw spring-boot:run
+    command: cd /workspace/gestaoRecursosConselho; /usr/bin/env /home/gitpod/.sdkman/candidates/java/17.0.8.fx-zulu/bin/java @./gitpod_args br.eti.davinunes.apiconselho.ApiConselhoApplication
