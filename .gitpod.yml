@@ -15,4 +15,4 @@ vscode:
 tasks:
   - name: Start Spring Boot API
     init: pwd
-    command: cd /workspace/gestaoRecursosConselho; /usr/bin/env /home/gitpod/.sdkman/candidates/java/17.0.8.fx-zulu/bin/java @./gitpod_args br.eti.davinunes.apiconselho.ApiConselhoApplication
+    command: cd /workspace/gestaoRecursosConselho
